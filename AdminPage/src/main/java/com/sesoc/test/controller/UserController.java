@@ -28,19 +28,18 @@ public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	private Mail mail;
 	
-	
 	@Autowired
 	private UserService service;
 	
 	@Autowired
 	private StatsService sservice;
 	
-	
 	//동근추가 - 작업창
 	@RequestMapping(value="workSpace")
 	public String workSpace(){
 		return "workSpace";
 	}
+	
 	//관리자//
 	//일반 회원 목록
 	@RequestMapping(value = "userList")
@@ -55,7 +54,6 @@ public class UserController {
 		
 		PageNavigator userNavi = service.userNavi(currentPage, userMap);
 		model.addAttribute("userList", service.getUserList(userMap, userNavi));
-		
 		model.addAttribute("userNavi", userNavi);
 		model.addAttribute("userKeyword", userKeyword);
 		model.addAttribute("userCondition", userCondition);
@@ -75,7 +73,6 @@ public class UserController {
 		
 		PageNavigator companyNavi = service.companyNavi(currentPage, companyMap);
 		model.addAttribute("companyList", service.getCompanyList(companyMap, companyNavi));
-		
 		model.addAttribute("companyNavi", companyNavi);
 		model.addAttribute("companyKeyword", companyKeyword);
 		model.addAttribute("companyCondition", companyCondition);
@@ -88,7 +85,7 @@ public class UserController {
 		model.addAttribute("autho", service.setAuthority(coId));
 		return "redirect:companyList";
 	}
-	
+	//기업 회원 승인 철회
 	@RequestMapping(value = "authorityRemove")
 	public String authorityRemove(String coId, Model model) {
 		model.addAttribute("authoRemove", service.setAuthorityRemove(coId));
@@ -117,7 +114,6 @@ public class UserController {
 		return service.idCheck(vo);		
 	}
 	//로그인
-	//로그인
 	@RequestMapping(value="loginUser", method = RequestMethod.GET)
 	public String loginUser(UserVO user, HttpSession session, Model model) {
 		UserVO result = service.loginUser(user);
@@ -129,15 +125,16 @@ public class UserController {
 			sservice.genFurnitureList(model, result);//로그인한 특정 유저에 맞는 추천 제품
 		}
 		
-		sservice.bestFurnitureList(model);//유저들에게 가장 인기 많은 제품
+		sservice.bestFurnitureList(model);//유저에게 가장 인기 많은 제품
 		
 		return "home";
 	}
 	
-	@RequestMapping(value="connectedUser", method=RequestMethod.GET)
+	/*@RequestMapping(value="connectedUser", method=RequestMethod.GET)
 	public String connectedUser(){
 		return "/User/connectedUser";
-	}
+	}*/
+	
 	//일반 회원 아이디 찾기
 	@RequestMapping(value = "idSearch", method = RequestMethod.GET)
 	public String idSearch() {
@@ -152,11 +149,12 @@ public class UserController {
 		service.searchUserId(model, vo);
 		return "/User/userIdSearchForm";		
 	}
-	//마이 페이지
-	@RequestMapping(value = "userPage", method = RequestMethod.GET)
+	
+	/*@RequestMapping(value = "userPage", method = RequestMethod.GET)
 	public String userPage() {
 		return "/User/userPageMenu";
-	}
+	}*/
+	
 	//회원 정보 수정
 	@RequestMapping(value = "userUpdateForm", method = RequestMethod.GET)
 	public String userUpdateForm(String id, Model model) {
@@ -190,18 +188,22 @@ public class UserController {
 	@RequestMapping(value="loginCompany")
 	public String loginCompany(CompanyVO company, HttpSession session) {
 		CompanyVO result = service.loginCompany(company);
+		
 		if(result != null){
-		session.setAttribute("CoId", result.getCoId());
-		session.setAttribute("coName", result.getCoName());
-		session.setAttribute("coPwd", result.getCoPwd());
-		session.setAttribute("coAuth", result.getCoAuthority());
+			session.setAttribute("CoId", result.getCoId());
+			session.setAttribute("coName", result.getCoName());
+			session.setAttribute("coPwd", result.getCoPwd());
+			session.setAttribute("coAuth", result.getCoAuthority());
 		}
+		
 		return "redirect:/";
 	}
-	@RequestMapping(value="connectedCompany", method=RequestMethod.GET)
+	
+	/*@RequestMapping(value="connectedCompany", method=RequestMethod.GET)
 	public String connectedCompany(){
 		return "/Company/connectedCompany";
-	}
+	}*/
+	
 	//기업 회원 아이디 찾기
 	@RequestMapping(value = "companyIdSearch", method = RequestMethod.GET)
 	public String companyIdSearch() {
@@ -212,11 +214,12 @@ public class UserController {
 		service.searchCompanyId(vo, model);
 		return "/Company/companyIdSearchForm";		
 	}
-	//마이 페이지
-	@RequestMapping(value = "companyPage", method = RequestMethod.GET)
+	
+	/*@RequestMapping(value = "companyPage", method = RequestMethod.GET)
 	public String companyPage() {
 		return "/Company/companyPageMenu";
-	}
+	}*/
+	
 	//회원 정보 수정
 	@RequestMapping(value = "companyUpdateForm", method = RequestMethod.GET)
 	public String companyUpdateForm(String coId, Model model) {
@@ -262,7 +265,6 @@ public class UserController {
 				return "redirect:/";
 			}
 		}
-
 		return "redirect:userList";
 	}
 	//기업 회원 삭제
@@ -275,7 +277,6 @@ public class UserController {
 				return "redirect:/";
 			}
 		}
-
 		return "redirect:companyList";
 	}
 	//메일 인증

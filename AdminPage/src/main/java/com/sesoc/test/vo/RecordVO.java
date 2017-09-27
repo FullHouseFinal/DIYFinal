@@ -19,7 +19,6 @@ public class RecordVO {
 
 	public RecordVO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public RecordVO(int furnitureNum, String id, int pick) {

@@ -13,7 +13,6 @@ public interface FileDao {
 
 	public int fileSaved(FurnitureVO vo);
 
-
 	public int companylibraryPaging(Map<String, String> libraryMap);
 
 	public ArrayList<FurnitureVO>  companylibraryList(Map<String, String> libraryMap, int startRecord, int countPerPage);

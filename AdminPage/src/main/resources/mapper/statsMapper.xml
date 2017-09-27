@@ -12,7 +12,7 @@
 		order by count(id) desc
 	</select>
 
-		<!-- 성별, 연령별 인기 제품 -->
+	<!-- 성별, 연령별 인기 제품 -->
 	<select id="genFurnitureList" resultType="RankVO">
 		select count(r.id) as rank, f.furniturenum as furnitureNum, f.imgpath as imgPath, u.gender as gender, extract(year from u.birth) as birthYear
 		from itr_record r, itr_furniture f, itr_user u 
@@ -21,27 +21,29 @@
 		order by count(r.id) desc
 	</select>
 	
-	<!-- 연도별 회사 순위 -->
+	<!-- 연도별 회사 통계 -->
 	<select id="Graph1" resultType="Graph1VO">
 		 select count(f.coname) as count,extract(year from r.dates) as year,f.coname as company from itr_record r,itr_furniture f
  		 where r.furniturenum=f.furniturenum 
 		 group by extract(year from dates),f.coname order by extract(year from dates)
 	</select>
 	
+	<!-- 회사별 가구 통계 -->
 	<select id="Graph2" resultType="Graph2VO">
 		select f.coname as coname,r.furniturenum as furniturenum ,f.type as type,count(r.furniturenum) as count from itr_record r,ITR_FURNITURE f
 		where r.furniturenum=f.furniturenum 
 		group by r.furniturenum,f.coname,f.type order by coname,count(r.furniturenum) desc
 	</select>
 	
+	<!-- 연도-월별 회사 통계 -->
 	<select id="Graph4" resultType="Graph4VO">
 	select count(f.coname) as count,extract(year from r.dates) as year,extract(month from r.dates) as month,f.coname as company from itr_record r,itr_furniture f
  	where r.furniturenum=f.furniturenum 
 	group by extract(year from r.dates),extract(month from r.dates),f.coname order by extract(year from r.dates) 
 	</select>
 	
+	<!-- 관리자가 전체, 기업별 좋아요 순으로 목록 조회 -->
 	<select id="companyListAll" parameterType="String" resultType="StatVO">
-
 		select f.FURNITURENUM as FURNITURENUM, f.FURNITURENAME as FURNITURENAME, 
 		f.type as type, f.color as color,count(r.id) as pick from itr_record r, itr_furniture f 
 		where r.FURNITURENUM = f.FURNITURENUM
@@ -59,20 +61,15 @@
 	</if> --> 
 		group by f.furniturenum, r.furniturenum, f.furniturename, f.type, f.color 
 		order by count(r.id) desc
-
 	</select>
 	
+	<!-- 기업 회원이 자사 좋아요 순으로 목록 조회 -->
 	<select id="companyStatistics" parameterType="String" resultType="StatVO">
-
 		select f.FURNITURENUM as FURNITURENUM, f.FURNITURENAME as FURNITURENAME, 
 		f.type as type, f.color as color,count(r.id) as pick from itr_record r, itr_furniture f 
 		where r.FURNITURENUM = f.FURNITURENUM and f.CONAME = #{coId}
 		group by f.furniturenum, r.furniturenum, f.furniturename, f.type, f.color 
 		order by count(r.id) desc
-
 	</select>
-	
-	
-	
 	
 </mapper>

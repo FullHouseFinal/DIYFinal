@@ -3,8 +3,6 @@ package com.sesoc.test.service;
 import java.util.ArrayList;
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.ui.Model;
 
 import com.sesoc.test.util.PageNavigator;
@@ -18,7 +16,7 @@ public interface UserService {
 	public ArrayList<CompanyVO> getCompanyList(Map<String, String> companyMap, PageNavigator companyNavi);//기업 회원 목록, 검색
 	public PageNavigator companyNavi(int currentPage, Map<String, String> companyMap);//페이징_기업
 	public boolean setAuthority(String coId);//기업 회원 승인
-	public boolean setAuthorityRemove(String coId);//기업 회원 승인철회
+	public boolean setAuthorityRemove(String coId);//기업 회원 승인 철회
 
 	//일반
 	public void joinUser(UserVO user);//회원 가입

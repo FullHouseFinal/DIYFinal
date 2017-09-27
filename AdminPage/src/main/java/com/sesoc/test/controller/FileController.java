@@ -1,6 +1,5 @@
 package com.sesoc.test.controller;
 
-
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -42,30 +41,30 @@ public class FileController {
 	
 	@Autowired
 	private FileService service;
-	// jincom << 이부분을 바꿔주세요assaadsadsadsa
+
+	// jincom << 이부분을 바꿔주세요
 	// C:/Users/SCITMaster/git/우리레포지터리 이름/AdminPage/src/main/webapp/resources/file/
 	// C:/Users/(사용자 이름) /git/우리레포지터리 이름/AdminPage/src/main/webapp/resources/file/
 	// C:/Users/(사용자 이름) /git/우리레포지터리 이름/AdminPage/src/main/webapp/resources/file/maps/
-	
-	private String path="C:/Users/SCITMASTER/git/DIY/AdminPage/AdminPage/src/main/webapp/resources/file/";
-	private String path1="C:/Users/SCITMASTER/git/DIY/AdminPage/AdminPage/src/main/webapp/resources/file/maps/";
+	private String path="C:/Users/SCITMASTER/git/DIYFinal/AdminPage/AdminPage/src/main/webapp/resources/file/";
+	private String path1="C:/Users/SCITMASTER/git/DIYFinal/AdminPage/AdminPage/src/main/webapp/resources/file/maps/";
 	private Mail mail;
 
-	
+	//가구 라이브러리 업로드
 	@RequestMapping(value = "furnitureUpload", method = RequestMethod.GET)
 	public String furnitureUpload(Model model) {
-		
 		service.find(model);
-		
 		return "/Company/companyLibraryUpload";
 	}
 	
+	//파일 저장
 	@RequestMapping(value = "fileSaved")
 	public String fileSaved(FurnitureVO vo,HttpServletRequest request, HttpServletResponse response,HttpSession session){
-		MultipartHttpServletRequest multipartRequest =  (MultipartHttpServletRequest)request;  //다중파일 업로드
+		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest)request;//다중파일 업로드
 		List<MultipartFile> files = multipartRequest.getFiles("uploadFile");
+		
 		String coNAME = (String) session.getAttribute("coName");
-		System.out.println(coNAME);
+
 		vo.setCoNAME(coNAME);
 		vo.setObjPath(files.get(0).getOriginalFilename());
 		vo.setMtlPath(files.get(1).getOriginalFilename());
@@ -74,15 +73,12 @@ public class FileController {
 		vo.setObjTexture2(files.get(4).getOriginalFilename());
 		vo.setObjTexture3(files.get(5).getOriginalFilename());
 		vo.setObjTexture4(files.get(6).getOriginalFilename());
-		System.out.println(vo);
 		
 		service.fileSaved(vo, files,path,path1);
 		return "redirect:/";
-
-		
 	}
 	
-	
+	//가구 라이브러리 목록(검색, 페이징 포함)
 	@RequestMapping(value="library")
 	public String library(
 			@RequestParam(value="currentPage", defaultValue="1") int currentPage,
@@ -102,10 +98,10 @@ public class FileController {
 		model.addAttribute("libraryKeyword", libraryKeyword);
 		model.addAttribute("libraryCondition", libraryCondition);
 		
-		
 		return "/Company/companyFurnitureList";
 	}
 	
+	//가구 라이브러리 열람
 	@RequestMapping(value = "libraryRead", method = RequestMethod.GET)
 	public String libraryRead(int furnitureNum, Model model,HttpSession session) {
 		session.setAttribute("furnitureNum",service.libraryRead(furnitureNum).getFurnitureNum());  
@@ -113,11 +109,12 @@ public class FileController {
 		return "/Company/libraryRead";
 	}
 	
+	//메시지 송신 폼
 	@RequestMapping(value="sendMessage", method = RequestMethod.GET)
 	public String sendMessage(){
 		return "/Company/sendMessage";
 	}
-
+	//메시지 송신
 	@RequestMapping(value="send", method = RequestMethod.POST)
 	public String send(String coManagerEmail, String title, String content){
 		CompanyVO company = new CompanyVO(); 
@@ -129,19 +126,13 @@ public class FileController {
 		}
 		
 		return "home";
-
 	}
 	
-	@RequestMapping(value="furniturnModify", method = RequestMethod.GET)
-	public String furniturnModify(int furnitureNum, Model model){
-		model.addAttribute("libraryRead", service.libraryRead(furnitureNum));
-		return "/Company/companyFurnitureModify";
-	}
-	
-	@RequestMapping(value="furniturnDelete", method = RequestMethod.GET)
+	//가구 라이브러리 삭제
+	@RequestMapping(value="furnitureDelete", method = RequestMethod.GET)
 	public String furniturnDelete(int furnitureNum){
-		FurnitureVO vo= service.furniturnDelete(furnitureNum,path,path1);
-		String a=vo.getCoNAME();
+		FurnitureVO vo = service.furniturnDelete(furnitureNum,path,path1);
+		String a = vo.getCoNAME();
 		
 		if(a == "Ikea"){
 			return "redirect:/file/library?coNAME=Ikea";
@@ -150,35 +141,27 @@ public class FileController {
 		}else{
 			return "redirect:/file/library?coNAME=Hanssem";
 		}
-		
-		
 	}
 	
-	// img 파일 업로드 테스트용
+	//img 파일 업로드 테스트용
 	@RequestMapping(value="test", method = RequestMethod.POST)
 	@ResponseBody
 	public String test(String imgData, HttpServletRequest request, HttpSession session) throws Throwable{
-		
 		//저장할 uuid
 		String uuid = UUID.randomUUID().toString();
 		//로그인 된 아이디
 		String id = (String) session.getAttribute("id");
 		
-		System.out.println(uuid+"&&&&"+id);
-		
 		String path = "C:/Users/SCITMASTER/git/DIY/AdminPage/AdminPage/src/main/webapp/resources/upload/";
 		String fullpath = "";
 		String[] strParts = imgData.split(",");
-		String rstStrImg = strParts[1];  //,로 구분하여 뒷 부분 이미지 데이터를 임시저장
-		
+		String rstStrImg = strParts[1];	//,로 구분하여 뒷 부분 이미지 데이터를 임시저장
 		
 		DateFormat sdf = new SimpleDateFormat("yyMMddhhmmss");
 		Date nowDate = new Date();
 		String now = sdf.format(nowDate);
 		String filenm = now +"DIY_"+id+"_"+uuid+".png";
 
-		System.out.println(filenm);
-		
 //		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); 
 		
 //		String filenm = sdf.format(new Date()).toString()+"DIY_"+id+"_"+uuid+".png";
@@ -196,13 +179,9 @@ public class FileController {
 		File outputFile= new File(fullpath);  //파일객체 생성
 		if( outputFile.exists() ) outputFile.delete();
 		
-		
 		ImgVO imgVO = new ImgVO(filenm, id, null);
-		
 		service.uploadImg(imgVO);
-		
 		ImageIO.write(image, "png", outputFile); //서버에 파일로 저장
-		
 		return "";
 	}
 	
@@ -210,11 +189,7 @@ public class FileController {
 	@RequestMapping(value="getFurnitureList", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<FurnitureVO> getFurnitureList(){
-			
 		return service.getFurnitureList();
-	}//
+	}
 		
-	
-	
-
 }

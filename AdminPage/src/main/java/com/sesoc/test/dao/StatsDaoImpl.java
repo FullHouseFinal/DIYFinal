@@ -18,7 +18,7 @@ public class StatsDaoImpl implements StatsDao {
 	@Autowired
 	private SqlSession sqlsession;
 
-	//가장 인기 많은 제품
+	//유저에게 가장 인기 많은 제품
 	@Override
 	public ArrayList<RankVO> bestFurnitureList() {
 		StatsMapper mapper = sqlsession.getMapper(StatsMapper.class);
@@ -34,15 +34,15 @@ public class StatsDaoImpl implements StatsDao {
 	      return list;
 	}
 	
+	//관리자가 전체, 기업별 좋아요 순으로 목록 조회
 	@Override
 	public ArrayList<StatVO> companyListAll(String stat) {
-		// TODO Auto-generated method stub
 		StatsMapper mapper = sqlsession.getMapper(StatsMapper.class);
 		ArrayList<StatVO> listAll= mapper.companyListAll(stat);
-		
 		return listAll;
 	}
 
+	//기업 회원이 자사 좋아요 순으로 목록 조회
 	@Override
 	public ArrayList<StatVO> companyStatistics(String coId) {
 		StatsMapper mapper = sqlsession.getMapper(StatsMapper.class);
@@ -50,7 +50,7 @@ public class StatsDaoImpl implements StatsDao {
 		return listAll;
 	}
 
-
+	//연도별 회사 통계
 	@Override
 	public ArrayList<Graph1VO> Graph1() {
 		StatsMapper mapper = sqlsession.getMapper(StatsMapper.class);
@@ -58,6 +58,7 @@ public class StatsDaoImpl implements StatsDao {
 		return list;
 	}
 	
+	//회사별 가구 통계
 	@Override
 	public ArrayList<Graph2VO> Graph2() {
 		StatsMapper mapper = sqlsession.getMapper(StatsMapper.class);
@@ -65,14 +66,12 @@ public class StatsDaoImpl implements StatsDao {
 		return list;
 	}
 	
+	//연도-월별 회사 통계
 	@Override
 	public ArrayList<Graph4VO> Graph4() {
 		StatsMapper mapper = sqlsession.getMapper(StatsMapper.class);
 		ArrayList<Graph4VO> list = mapper.Graph4();
 		return list;
 	}
-
-
-	
 
 }

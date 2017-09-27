@@ -28,7 +28,6 @@ public class UserVO {
 
 	public UserVO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public UserVO(String id, String pwd, String name, String email, String gender, String birth) {

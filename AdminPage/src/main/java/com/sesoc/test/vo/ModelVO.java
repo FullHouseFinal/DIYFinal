@@ -23,8 +23,7 @@ public class ModelVO {
 	/** MODEL 최근 수정 날짜. */
 	private String modifydate;
 
-	public ModelVO() {
-	}
+	public ModelVO() {}
 
 	public ModelVO(String modelUuid, String id, String modelName, String createdate, String modifydate) {
 		super();

@@ -29,8 +29,7 @@ public class GalleryVO {
 	/** GALLERY 조회수. */
 	private int hit;
 
-	public GalleryVO() {
-	}
+	public GalleryVO() {}
 
 	public GalleryVO(int galleryNum, String id, String imgUuid, String title, String content, String inputdate,
 			int hit) {

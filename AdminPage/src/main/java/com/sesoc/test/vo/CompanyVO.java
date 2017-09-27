@@ -32,8 +32,7 @@ public class CompanyVO {
 	/** COMPANY 승인여부. */
 	private int coAuthority;
 
-	public CompanyVO() {
-	}
+	public CompanyVO() {}
 
 	public CompanyVO(String coName, String coId, String coPwd, String coTel, String coManagerName, String coManagerDept,
 			String coManagerEmail, int coAuthority) {

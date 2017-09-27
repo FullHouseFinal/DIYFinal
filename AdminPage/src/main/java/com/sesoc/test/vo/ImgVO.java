@@ -19,7 +19,6 @@ public class ImgVO {
 
 	public ImgVO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getImgUuid() {

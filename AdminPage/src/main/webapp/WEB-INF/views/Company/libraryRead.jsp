@@ -219,19 +219,11 @@
 			location.href = "/admin/file/sendMessage";
 		}
 
-		function furniturnModify() {
+		function furnitureDelete() {
 
 			var furnitureNum = '${sessionScope.furnitureNum}';
 
-			location.href = "/admin/file/furniturnModify?furnitureNum="
-					+ furnitureNum;
-		}
-
-		function furniturnDelete() {
-
-			var furnitureNum = '${sessionScope.furnitureNum}';
-
-			location.href = "/admin/file/furniturnDelete?furnitureNum="
+			location.href = "/admin/file/furnitureDelete?furnitureNum="
 					+ furnitureNum;
 		}
 	</script>
@@ -292,15 +284,13 @@
 
 									<c:if test="${sessionScope.CoId != null}">
 										<input class="btn btn-primary pull-right" type="button"
-											value="수정" style="margin: 5px" onclick="furniturnModify()">
-										<input class="btn btn-primary pull-right" type="button"
-											value="삭제" style="margin: 5px" onclick="furniturnDelete()">
+											value="삭제" style="margin: 5px" onclick="furnitureDelete()">
 									</c:if>
 									<c:if test="${sessionScope.CoId==null}">
 										<input type="hidden" name="furnitureNum"
 											value="${libraryRead.furnitureNum}">
 										<label class="btn btn-primary pull-right" for="modal"
-											style="margin: 5px; height: 34px;">메세지보내기</label>
+											style="margin: 5px; height: 34px;">메시지 보내기</label>
 									</c:if>
 								</form>
 								<input type="checkbox" id="modal" /> <label for="modal"
@@ -337,9 +327,6 @@
 
 						</div>
 						<!-- end step 1 -->
-
-
-
 					</div>
 				</div>
 				<!-- end checkout-tab -->
@@ -405,8 +392,3 @@
 </body>
 
 </html>
-
-
-
-
-

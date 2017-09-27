@@ -23,8 +23,7 @@ public class ReplyVO {
 	/** REPLY 작성 날짜. */
 	private String inputdate;
 
-	public ReplyVO() {
-	}
+	public ReplyVO() {}
 
 	public ReplyVO(int replyNum, int galleryNum, String id, String text, String inputdate) {
 		super();

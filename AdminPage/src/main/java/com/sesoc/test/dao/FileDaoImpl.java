@@ -20,15 +20,12 @@ public class FileDaoImpl implements FileDao {
 
 	@Override
 	public ArrayList<CompanyVO> find() {
-		// TODO Auto-generated method stub
-	
 		FileMapper mapper = sqlsession.getMapper(FileMapper.class);
 		return mapper.find();
 	}
 
 	@Override
 	public int fileSaved(FurnitureVO vo) {
-		// TODO Auto-generated method stub
 		FileMapper mapper = sqlsession.getMapper(FileMapper.class);
 		return mapper.fileSaved(vo);
 	}
@@ -48,7 +45,6 @@ public class FileDaoImpl implements FileDao {
 
 	@Override
 	public int companylibraryPaging(Map<String, String> libraryMap) {
-		// TODO Auto-generated method stub
 		FileMapper mapper = sqlsession.getMapper(FileMapper.class);
 		return mapper.companylibraryPaging(libraryMap);
 	}
@@ -56,7 +52,6 @@ public class FileDaoImpl implements FileDao {
 	@Override
 	public ArrayList<FurnitureVO> companylibraryList(Map<String, String> libraryMap, int startRecord,
 			int countPerPage) {
-		// TODO Auto-generated method stub
 		FileMapper mapper = sqlsession.getMapper(FileMapper.class);
 		RowBounds libraryRb = new RowBounds(startRecord, countPerPage);
 		return mapper.companylibraryList(libraryMap, libraryRb);
@@ -70,31 +65,23 @@ public class FileDaoImpl implements FileDao {
 
 	@Override
 	public FurnitureVO furniturDelete(int furnitureNum) {
-		// TODO Auto-generated method stub
-		
 		FileMapper mapper = sqlsession.getMapper(FileMapper.class);
 		FurnitureVO result=mapper.libraryRead(furnitureNum);		
 		mapper.furniturnDelete(furnitureNum);
-		System.out.println(result+"dddd");
 		return result;
-		
 	}
 
 	@Override
 	public ArrayList<FurnitureVO> getFurnitureList() {
-		
 		FileMapper mapper = sqlsession.getMapper(FileMapper.class);
-		
 		return mapper.getFurnitureList(); 
 	}
 
 	@Override
 	public void uploadImg(ImgVO imgVO) {
-		
 		FileMapper mapper = sqlsession.getMapper(FileMapper.class);
 		mapper.uploadImg(imgVO);
 		
 	}
-
 
 }

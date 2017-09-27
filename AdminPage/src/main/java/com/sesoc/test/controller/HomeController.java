@@ -16,7 +16,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
-		service.bestFurnitureList(model);
+		service.bestFurnitureList(model);//유저에게 가장 인기 많은 제품
 		return "home";
 	}
 	

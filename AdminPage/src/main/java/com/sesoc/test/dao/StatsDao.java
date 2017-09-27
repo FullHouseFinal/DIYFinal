@@ -11,18 +11,18 @@ import com.sesoc.test.vo.UserVO;
 
 public interface StatsDao {
 
-	public ArrayList<RankVO> bestFurnitureList();//가장 인기 많은 제품
+	public ArrayList<RankVO> bestFurnitureList();//유저에게 가장 인기 많은 제품
 	
 	public ArrayList<RankVO> genFurnitureList(UserVO user);//성별, 연령별 인기 제품
 
-	public ArrayList<Graph1VO> Graph1();
+	public ArrayList<Graph1VO> Graph1();//연도별 회사 통계
 	
-	public ArrayList<Graph2VO> Graph2();
+	public ArrayList<Graph2VO> Graph2();//회사별 가구 통계
 	
-	public ArrayList<Graph4VO> Graph4();
+	public ArrayList<Graph4VO> Graph4();//연도-월별 회사 통계
 
-	public ArrayList<StatVO> companyListAll(String stat);
+	public ArrayList<StatVO> companyListAll(String stat);//관리자가 전체, 기업별 좋아요 순으로 목록 조회
 
-	public ArrayList<StatVO> companyStatistics(String coId);
+	public ArrayList<StatVO> companyStatistics(String coId);//기업 회원이 자사 좋아요 순으로 목록 조회
 
 }

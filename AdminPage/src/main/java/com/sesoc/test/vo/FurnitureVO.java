@@ -23,6 +23,7 @@ public class FurnitureVO {
 	/** FURNITURE 색상. */
 	private String color;
 
+	
 	private String objPath;
 	
 	private String objTexture1;
@@ -33,17 +34,28 @@ public class FurnitureVO {
 	
 	private String objTexture4;
 	
-	
 	private String mtlPath;
 	
 	private String imgPath;
 
-	@Override
-	public String toString() {
-		return "FurnitureVO [furnitureNum=" + furnitureNum + ", coNAME=" + coNAME + ", furnitureName=" + furnitureName
-				+ ", type=" + type + ", color=" + color + ", objPath=" + objPath + ", objTexture1=" + objTexture1
-				+ ", objTexture2=" + objTexture2 + ", objTexture3=" + objTexture3 + ", objTexture4=" + objTexture4
-				+ ", mtlPath=" + mtlPath + ", imgPath=" + imgPath + "]";
+	public FurnitureVO(){}
+	
+	public FurnitureVO(int furnitureNum, String coNAME, String furnitureName, String type, String color, String objPath,
+			String objTexture1, String objTexture2, String objTexture3, String objTexture4, String mtlPath,
+			String imgPath) {
+		super();
+		this.furnitureNum = furnitureNum;
+		this.coNAME = coNAME;
+		this.furnitureName = furnitureName;
+		this.type = type;
+		this.color = color;
+		this.objPath = objPath;
+		this.objTexture1 = objTexture1;
+		this.objTexture2 = objTexture2;
+		this.objTexture3 = objTexture3;
+		this.objTexture4 = objTexture4;
+		this.mtlPath = mtlPath;
+		this.imgPath = imgPath;
 	}
 
 	public int getFurnitureNum() {
@@ -141,27 +153,13 @@ public class FurnitureVO {
 	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
 	}
-
-	public FurnitureVO(int furnitureNum, String coNAME, String furnitureName, String type, String color, String objPath,
-			String objTexture1, String objTexture2, String objTexture3, String objTexture4, String mtlPath,
-			String imgPath) {
-		super();
-		this.furnitureNum = furnitureNum;
-		this.coNAME = coNAME;
-		this.furnitureName = furnitureName;
-		this.type = type;
-		this.color = color;
-		this.objPath = objPath;
-		this.objTexture1 = objTexture1;
-		this.objTexture2 = objTexture2;
-		this.objTexture3 = objTexture3;
-		this.objTexture4 = objTexture4;
-		this.mtlPath = mtlPath;
-		this.imgPath = imgPath;
+	
+	@Override
+	public String toString() {
+		return "FurnitureVO [furnitureNum=" + furnitureNum + ", coNAME=" + coNAME + ", furnitureName=" + furnitureName
+				+ ", type=" + type + ", color=" + color + ", objPath=" + objPath + ", objTexture1=" + objTexture1
+				+ ", objTexture2=" + objTexture2 + ", objTexture3=" + objTexture3 + ", objTexture4=" + objTexture4
+				+ ", mtlPath=" + mtlPath + ", imgPath=" + imgPath + "]";
 	}
-
-	
-	public FurnitureVO(){}
-	
 
 }

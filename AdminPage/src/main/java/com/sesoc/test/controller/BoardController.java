@@ -38,11 +38,14 @@ public class BoardController<ReplyVo> {
 		map.put("searchKeyword", searchKeyword);
 		map.put("searchkeyCondition", searchkeyCondition);
 		map.put("searchCondition", searchCondition);
+		
 		PageNavigator navi = service.getNavi(currentPage, map);
+		
 		model.addAttribute("list", service.boardList(map, navi));
 		model.addAttribute("navi", navi);
 		model.addAttribute("searchKeyword", searchKeyword);
 		model.addAttribute("searchCondition", searchCondition);
+		
 		return "/Gallery/galleryForm";
 	}
 	
@@ -58,6 +61,7 @@ public class BoardController<ReplyVo> {
 	public String write() {
 		return "/Gallery/writeForm";
 	}
+	
 	//갤러리 작성
 	@RequestMapping(value = "writeBoard", method = RequestMethod.POST)
 	public String readBoard(GalleryVO vo,MultipartFile uploadFile) {
@@ -105,12 +109,5 @@ public class BoardController<ReplyVo> {
 	public void deleteReply(int replyNum) {
 		service.deleteReply(replyNum);
 	}
-	
-	/*//댓글 수정
-	@RequestMapping(value = "replyModify")
-	@ResponseBody
-	public void replyModify(int replyNum) {
-		//??
-	}*/
 	
 }

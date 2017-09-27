@@ -8,14 +8,11 @@ package com.sesoc.test.vo;
  */
 public class StatVO {
 	
-
-
 	/** COMPANY 가구번호 */
 	private int furnitureNum;
 	
 	/** Furniture 이름**/
 	private String FurnitureName;
-	
 	
 	/** Company 타입 **/
 	private String type;
@@ -23,13 +20,11 @@ public class StatVO {
 	/** COMPANY 색상 */
 	private String color;
 
-
 	/** COMPANY 좋아요*/
 	private String pick;
 
 	public StatVO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public StatVO(int furnitureNum, String furnitureName, String type, String color, String pick) {
@@ -87,10 +82,4 @@ public class StatVO {
 				+ ", color=" + color + ", pick=" + pick + "]";
 	}
 	
-
-	
-	
-	
 }
-
-	

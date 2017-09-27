@@ -24,6 +24,7 @@ public class RankVO {
 	private String birthYear;
 
 	public RankVO(){}
+	
 	public RankVO(int rank, int furnitureNum, String imgPath, String gender, String birthYear) {
 		super();
 		this.rank = rank;
@@ -36,33 +37,43 @@ public class RankVO {
 	public int getRank() {
 		return rank;
 	}
+	
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
+	
 	public int getFurnitureNum() {
 		return furnitureNum;
 	}
+	
 	public void setFurnitureNum(int furnitureNum) {
 		this.furnitureNum = furnitureNum;
 	}
+	
 	public String getImgPath() {
 		return imgPath;
 	}
+	
 	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
 	}
+	
 	public String getGender() {
 		return gender;
 	}
+	
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+	
 	public String getBirthYear() {
 		return birthYear;
 	}
+	
 	public void setBirthYear(String birthYear) {
 		this.birthYear = birthYear;
 	}
+	
 	@Override
 	public String toString() {
 		return "RankVO [rank=" + rank + ", furnitureNum=" + furnitureNum + ", imgPath=" + imgPath + ", gender=" + gender

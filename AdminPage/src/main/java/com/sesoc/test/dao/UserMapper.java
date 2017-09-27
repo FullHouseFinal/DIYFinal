@@ -28,6 +28,7 @@ public interface UserMapper {
 
 	//기업 회원 승인 철회
 	public int setAuthorityRemove(String coId);
+	
 	///////////////////일반 회원///////////////////
 	//회원 가입
 	public int joinUser(UserVO user);
@@ -72,6 +73,5 @@ public interface UserMapper {
 
 	//기업 회원 삭제
 	public int companyDelete(String id);
-
 
 }

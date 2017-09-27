@@ -3,9 +3,6 @@ package com.sesoc.test.service;
 import java.util.ArrayList;
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
-
-import org.junit.internal.matchers.SubstringMatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -39,10 +36,7 @@ public class UserServiceImpl implements UserService{
 	//일반 회원 로그인
 	@Override
 	public UserVO loginUser(UserVO user) {
-		
 		return	dao.loginUser(user);
-
-		
 	}
 	
 	//기업 회원 로그인
@@ -200,17 +194,14 @@ public class UserServiceImpl implements UserService{
 			Mail.sendMail2(newvo.getEmail(),newvo.getPwd());
 			return true;
 		}
-		
 	}
 
 	//기업 회원 비밀번호 찾기
 	@Override
 	public boolean companyPwd(String coId, String coManagerEmail) {
 		CompanyVO vo = new CompanyVO();
-		
 		vo.setCoId(coId);
 		vo.setCoManagerEmail(coManagerEmail);
-		
 		CompanyVO newvo=dao.companyPwd(vo);
 		
 		if(newvo==null){

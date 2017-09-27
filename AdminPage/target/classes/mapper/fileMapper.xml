@@ -6,7 +6,7 @@
 	<select id="find"  resultType="CompanyVO">
 		SELECT * FROM ITR_COMPANY	
 	</select>
-	
+	<!-- 파일 저장 -->
 	<insert parameterType="FurnitureVO" id="fileSaved">
 			INSERT INTO ITR_FURNITURE VALUES ( FURNITURENUM_SEQ.NEXTVAL, 
 				#{coNAME}, #{furnitureName}, #{type}, #{color}, 
@@ -31,8 +31,7 @@
 			) 
 	</insert>
 	
-	
-	
+	<!-- 가구 라이브러리?? -->
 	<select id="libraryList" parameterType="map" resultType="FurnitureVO">
 		SELECT * FROM ITR_FURNITURE 
 		
@@ -62,6 +61,7 @@
 		
 			  ORDER BY FURNITURENUM ASC
 	</select>
+	
 	<!-- 페이징_라이브러리 -->
 	<select id="libraryPaging" parameterType="map" resultType="int">
 		SELECT COUNT(*) FROM ITR_FURNITURE 
@@ -101,17 +101,14 @@
 		delete from ITR_FURNITURE WHERE FURNITURENUM = #{furnitureNum}
 	</delete>
 	
-	<!-- 가구리스트 호출 (작업창)-->
+	<!-- 가구 리스트 호출 (작업창)-->
 	<select id="getFurnitureList" parameterType="FurnitureVO" resultType="FurnitureVO">
 		SELECT * FROM ITR_FURNITURE 
 	</select>
 	
-<!-- 	이미지 데이터 베이스에 등록 -->
+	<!-- 이미지 데이터 베이스에 등록 -->
 	<insert id="uploadImg" parameterType="ImgVO">
 		INSERT INTO ITR_IMG VALUES (#{imgUuid}, #{id}, sysdate)
 	</insert>
 
-
-
-	
 </mapper>
