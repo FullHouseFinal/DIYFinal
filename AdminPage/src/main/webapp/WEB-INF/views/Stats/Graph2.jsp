@@ -1,14 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+   pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>chart created with amCharts | amCharts</title>
+		<title>Graph2</title>
 		<meta name="description" content="chart created using amCharts live editor" />
 		
 		<!-- amCharts javascript sources -->
 		<script src="https://www.amcharts.com/lib/3/amcharts.js" type="text/javascript"></script>
 		<script src="https://www.amcharts.com/lib/3/radar.js" type="text/javascript"></script>
 		
-
 		<!-- amCharts javascript code -->
 		<script type="text/javascript">
 			AmCharts.makeChart("chartdiv",

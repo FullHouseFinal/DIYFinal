@@ -19,7 +19,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE META -->
-<title>HomeStyle | Responsive Furniture Website Template</title>
+<title>companyIdSearchForm</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="">
@@ -83,7 +83,7 @@
 					<div class="row">
 						<div class="col-md-8"
 							style="text-align: center; width: 100%; padding-left: 100px; padding-right: 100px;">
-							<h2 style="color: #555">아이디좀 찾아줘</h2>
+							<h2 style="color: #555">아이디 찾기</h2>
 							<hr>
 							<table class="" style="width: 100%;">
 								<tbody>
@@ -120,7 +120,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-sm-4 col-xs-12">
-						<a class="navbar-brand" href="index.html"><img
+						<a class="navbar-brand" href="#"><img
 							src="/admin/resources/images/logo.png" alt=""></a>
 					</div>
 					<!-- end col -->

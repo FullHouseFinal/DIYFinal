@@ -12,14 +12,13 @@
 
 <head>
 
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE META -->
-<title>HomeStyle | Responsive Furniture Website Template</title>
+<title>libraryUpload</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="">
@@ -713,10 +712,6 @@ label, label::before {
 				</div>
 				<!-- 				<input type="submit" value="파일저장" class="btn btn-primary" style="width: 142px;" /> -->
 			</form>
-
-
-
-
 			<!-- end container-fluid -->
 		</section>
 		<!-- end section -->
@@ -724,7 +719,7 @@ label, label::before {
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-sm-4 col-xs-12">
-						<a class="navbar-brand" href="index.html"><img
+						<a class="navbar-brand" href="#"><img
 							src="/admin/resources/images/logo.png" alt=""></a>
 					</div>
 					<!-- end col -->

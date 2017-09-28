@@ -17,7 +17,7 @@
    content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE META -->
-<title>writeForm</title>
+<title>Gallery</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="">
@@ -91,7 +91,7 @@
                         <div class="col-md-6"
                            style="text-align: center; width: 100%; padding-left: 200px; padding-right: 200px;">
                            <div class="widget-title">
-                              <h2 style="color: #555">게시글 작성이야</h2>
+                              <h2 style="color: #555">게시글 작성</h2>
                               <hr>
                            </div>
                            <table class="table">
@@ -272,7 +272,6 @@
    <script src="/admin/resources/js/threecolgallery.js"></script>
    <script src="/admin/resources/js/jquery-3.2.1.js"></script>
    <script>
-
       $(document).ready(function(e) {
          $(".img-check").click(function() {
             

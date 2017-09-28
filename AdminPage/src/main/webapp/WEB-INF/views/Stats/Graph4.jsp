@@ -1,13 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+   pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>chart created with amCharts | amCharts</title>
+		<title>Graph4</title>
 		<meta name="description" content="chart created using amCharts live editor" />
 		
 		<!-- amCharts javascript sources -->
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
-		
 
 		<!-- amCharts javascript code -->
 		<script type="text/javascript">
@@ -47,11 +49,7 @@
 							"type": "column",
 							"valueField": "column-3"
 						},
-						{
-							"id": "AmGraph-4",
-							"title": "graph 4",
-							"valueField": "category"
-						}
+						
 					],
 					"guides": [],
 					"valueAxes": [
@@ -78,75 +76,75 @@
 						
 						{
 							"category": "1",
-							"column-1": ' ${ja2.get(0)}',
-							"column-2":  ' ${ja2.get(1)}',
-							"column-3": ' ${ja2.get(2)}'
+							"column-1": ' ${ja.get(0)}',
+							"column-2":  ' ${ja.get(1)}',
+							"column-3": ' ${ja.get(2)}'
 						},
 						{
 							"category": "2",
-							"column-1": ' ${fe2.get(0)}',
-							"column-2":  ' ${fe2.get(1)}',
-							"column-3": ' ${fe2.get(2)}'
+							"column-1": ' ${fe.get(0)}',
+							"column-2":  ' ${fe.get(1)}',
+							"column-3": ' ${fe.get(2)}'
 						},
 						{
 							"category": "3",
-							"column-1": ' ${ma2.get(0)}',
-							"column-2":  ' ${ma2.get(1)}',
-							"column-3": ' ${ma2.get(2)}'
+							"column-1": ' ${ma.get(0)}',
+							"column-2":  ' ${ma.get(1)}',
+							"column-3": ' ${ma.get(2)}'
 						},
 						{
 							"category": "4",
-							"column-1": ' ${ap2.get(0)}',
-							"column-2":  ' ${ap2.get(1)}',
-							"column-3": ' ${ap2.get(2)}'
+							"column-1": ' ${ap.get(0)}',
+							"column-2":  ' ${ap.get(1)}',
+							"column-3": ' ${ap.get(2)}'
 						},
 						{
 							"category": "5",
-							"column-1": ' ${may2.get(0)}',
-							"column-2":  ' ${may2.get(1)}',
-							"column-3": ' ${may2.get(2)}'
+							"column-1": ' ${may.get(0)}',
+							"column-2":  ' ${may.get(1)}',
+							"column-3": ' ${may.get(2)}'
 						},
 						{
 							"category": "6",
-							"column-1": ' ${jun2.get(0)}',
-							"column-2":  ' ${jun2.get(1)}',
-							"column-3": ' ${jun2.get(2)}'
+							"column-1": ' ${jun.get(0)}',
+							"column-2":  ' ${juny.get(1)}',
+							"column-3": ' ${jun.get(2)}'
 						},
 						{
 							"category": "7",
-							"column-1": ' ${july2.get(0)}',
-							"column-2":  ' ${july2.get(1)}',
-							"column-3": ' ${july2.get(2)}'
+							"column-1": ' ${july.get(0)}',
+							"column-2":  ' ${july.get(1)}',
+							"column-3": ' ${july.get(2)}'
 						},
 						{
 							"category": "8",
-							"column-1": ' ${au2.get(0)}',
-							"column-2":  ' ${au2.get(1)}',
-							"column-3": ' ${au2.get(2)}'
+							"column-1": ' ${au.get(0)}',
+							"column-2":  ' ${au.get(1)}',
+							"column-3": ' ${au.get(2)}'
 						},
 						{
 							"category": "9",
-							"column-1": ' ${se2.get(0)}',
-							"column-2":  ' ${se2.get(1)}',
-							"column-3": ' ${se2.get(2)}'
+							"column-1": ' ${se.get(0)}',
+							"column-2":  ' ${se.get(1)}',
+							"column-3": ' ${se.get(2)}'
 						},
 						{
 							"category": "10",
-							"column-1": ' ${op2.get(0)}',
-							"column-2":  ' ${op2.get(1)}',
-							"column-3": ' ${op2.get(2)}'
+							"column-1": ' ${op.get(0)}',
+							"column-2":  ' ${op.get(1)}',
+							"column-3": ' ${op.get(2)}'
 						},
 						{
 							"category": "11",
-							"column-1": ' ${no2.get(0)}',
-							"column-2":  ' ${no2.get(1)}',
-							"column-3": ' ${no2.get(2)}'
+							"column-1": ' ${no.get(0)}',
+							"column-2":  ' ${no.get(1)}',
+							"column-3": ' ${no.get(2)}'
 						},
 						{
 							"category": "12",
-							"column-1": ' ${de2.get(0)}',
-							"column-2":  ' ${de2.get(1)}',
-							"column-3": ' ${de2.get(2)}'
+							"column-1": ' ${de.get(0)}',
+							"column-2":  ' ${de.get(1)}',
+							"column-3": ' ${de.get(2)}'
 						}
 					]
 				}

@@ -14,14 +14,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- SITE META -->
-    <title>HomeStyle | Responsive Furniture Website Template</title>
+    <title>Home</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
 
     <!-- FAVICONS 사이트 왼쪽에 뜨는 작은 아이콘-->
     <link rel="shortcut icon" href="/admin/resources/images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/admin/resources/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="57x57" href="/admin/resources/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/admin/resources/images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="76x76" href="/admin/resources/images/apple-touch-icon-76x76.png">
@@ -52,7 +52,6 @@
 
 </head>
 <body>
-
 	<!-- PRELOADER -->
         <div id="loader">
 			<div class="loader-container">
@@ -433,7 +432,7 @@
         <section class="section lb">
             <div class="container">
                 <div class="section-title text-center clearfix">
-                    <h4>우리 사이트를 사용한 사용자의 리뷰</h4>
+                    <h4>우리 사이트를 사용한 유저의 리뷰</h4>
                     <p>Don't forget to check recent home decoration trends from our blog!</p>
                     <hr>
                 </div><!-- end title -->
@@ -791,6 +790,5 @@
         }); /*ready*/
         })(jQuery);
     </script>       
-
 </body>
 </html>

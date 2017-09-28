@@ -18,7 +18,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE META -->
-<title>companyList</title>
+<title>libraryRead</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="">
@@ -286,7 +286,7 @@
 										<input class="btn btn-primary pull-right" type="button"
 											value="삭제" style="margin: 5px" onclick="furnitureDelete()">
 									</c:if>
-									<c:if test="${sessionScope.CoId==null}">
+									<c:if test="${sessionScope.CoId == null}">
 										<input type="hidden" name="furnitureNum"
 											value="${libraryRead.furnitureNum}">
 										<label class="btn btn-primary pull-right" for="modal"
@@ -338,7 +338,7 @@
 			<div class="container">
 				<div class="row" style="vertical-align: middle;">
 					<div class="col-md-4 col-sm-4 col-xs-12" style="vertical-align: m;">
-						<a class="navbar-brand" href="index.html"><img
+						<a class="navbar-brand" href="#"><img
 							src="/admin/resources/images/logo.png" alt=""></a>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-12 text-center payments"
@@ -357,7 +357,7 @@
 							<li><a href="/admin/">Home</a></li>
 							<li><a href="#">Terms of Usage</a></li>
 							<li><a href="#">Contact</a></li>
-							<li><a class="topbutton" href="/admin/user/connectedCompany"
+							<li><a class="topbutton" href="#"
 								style="bottom: -100px;">Back<i class="fa fa-angle-up"></i></a></li>
 						</ul>
 					</div>
@@ -377,7 +377,6 @@
 	<script src="/admin/resources/js/bootstrap.min.js"></script>
 	<script src="/admin/resources/js/plugins.js"></script>
 	<script src="/admin/resources/js/index.js"></script>
-
 
 	<script>
 		$("#sendBtn").click(function() {

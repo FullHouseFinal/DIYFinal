@@ -1,41 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
    pageEncoding="utf-8"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
    <head>
-      <title>chart created with amCharts | amCharts</title>
+      <title>Graph1</title>
       <meta name="description" content="chart created using amCharts live editor" />
       
       <!-- amCharts javascript sources -->
       <script src="https://www.amcharts.com/lib/3/amcharts.js" type="text/javascript"></script>
       <script src="https://www.amcharts.com/lib/3/serial.js" type="text/javascript"></script>
       <script src="https://www.amcharts.com/lib/3/themes/light.js" type="text/javascript"></script>
-      
 
       <!-- amCharts javascript code -->
       <script type="text/javascript">
-      
- /*  		$(function(){
-				$.ajax({
-				url : "/admin/stats/graph1",
-				type : "post",
-				
-				success : function(result){
-					if(result!="null"){
-						alert("this id is possible");
-						
-					}else{
-						alert("this id is already used");
-						$("#btn").attr("disabled","disabled");
-					}
-				}
-			});
-				
-  		});
-	
-       */
          AmCharts.makeChart("chartdiv",
             {
                "type": "serial",
@@ -134,6 +112,5 @@
    </head>
    <body>
       <div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
-    
    </body>
 </html>

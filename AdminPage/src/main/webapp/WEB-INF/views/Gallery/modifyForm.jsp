@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
    pageEncoding="utf-8"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -21,7 +20,7 @@
    content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE META -->
-<title>userList</title>
+<title>Gallery</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="">
@@ -95,7 +94,7 @@
                         <div class="col-md-6"
                            style="text-align: center; width: 100%; padding-left: 200px; padding-right: 200px;">
                            <div class="widget-title">
-                              <h2 style="color: #555">게시글 수정이야</h2>
+                              <h2 style="color: #555">게시글 수정</h2>
                               <hr>
                            </div>
                            <!--       <form action="modifyBoard" method="post" enctype="multipart/form-data" > -->
@@ -287,7 +286,6 @@
    <script>
       $(document).ready(function(e) {
          $(".img-check").click(function() {
-
             $(this).toggleClass("check1");
 
             var chkbox = document.getElementsByClassName("check1").length;

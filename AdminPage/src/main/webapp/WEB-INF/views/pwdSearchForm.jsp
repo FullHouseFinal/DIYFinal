@@ -18,7 +18,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE META -->
-<title>HomeStyle | Responsive Furniture Website Template</title>
+<title>PasswordSearchForm</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="">
@@ -187,21 +187,21 @@
 										style="text-align: center; width: 100%; padding-left: 100px; padding-right: 100px;">
 
 										<div class="widget-title">
-											<h2 style="color: #555">아나타노 패스와드와?</h2>
+											<h2 style="color: #555">Fill in the form ↓↓</h2>
 											<hr>
 										</div>
 										<table class="table">
 											<tbody>
 												<tr class="row">
 													<td class="col-md-3" style="width: 50%;">
-													<input type="radio" name="people" value="user" checked="checked" />일반회원
-													<input type="radio" name="people" value="company" />기업회원
+													<input type="radio" name="people" value="user" checked="checked" />일반
+													<input type="radio" name="people" value="company" />기업
 													<input type="text" class="form-control input-lg" id="id" name="id" placeholder="ID" style="margin-bottom: 10px; display: inline; width: 389.8px;">
 													<input type="email" class="form-control input-lg" id="email" name="email" placeholder="Email" style="display: inline; width: 389.8px;">
 														
 													<button type="submit" id="search" class="button button--aylen btn" 
 															style="margin-top: 20px; width: 110px; height: 50px; 
-															font-size: 20px; border-radius: 35px;">비밀번호 찾기</button></td>
+															font-size: 20px; border-radius: 35px;">Search</button></td>
 												</tr>
 											</tbody>
 										</table>
@@ -233,7 +233,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-sm-4 col-xs-12">
-						<a class="navbar-brand" href="index.html"><img
+						<a class="navbar-brand" href="#"><img
 							src="/admin/resources/images/logo.png" alt=""></a>
 					</div>
 					<!-- end col -->
@@ -286,9 +286,9 @@
 		function searchPwd(){
 			var id = document.getElementById("id").value;
 			var email = document.getElementById("email").value;
-			var check =$("input[type='radio']:checked:checked");
+			var check = $("input[type='radio']:checked:checked");
 			 
-			// 체크박스 갯수만큼 for 문을 돌려 체크된 넘의 value값을 가져온다.
+			//체크박스 갯수만큼 for 문을 돌려 체크된 num의 value값을 가져온다.
 			for(var i=0; i<check.length; i++){
 				if(check[i].value=="user"){
 					location.href="/admin/user/userPwd?id="+id+"&email="+email;

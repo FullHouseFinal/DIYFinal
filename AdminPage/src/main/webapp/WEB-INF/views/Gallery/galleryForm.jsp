@@ -19,7 +19,7 @@
    content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE META -->
-<title>HomeStyle | Responsive Furniture Website Template</title>
+<title>Gallery</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="">
@@ -146,7 +146,6 @@
                   </div>
                   <select name="searchkeyCondition" id="select-profession"
                      style="display: none;">
-
                      <option value="id">ID</option>
                      <option value="email">EMAIL</option>
                   </select>
@@ -253,7 +252,6 @@
                + searchkeyCondition;
       }
       function galleryRead() {
-
          location.href = "/admin/board/write";
       }
    </script>

@@ -19,7 +19,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE META -->
-<title>HomeStyle | Responsive Furniture Website Template</title>
+<title>userIdSearchForm</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="">

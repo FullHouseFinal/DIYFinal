@@ -20,7 +20,7 @@
 
 
 <!-- SITE META -->
-<title>HomeStyle | Responsive Furniture Website Template</title>
+<title>companyJoin</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="">

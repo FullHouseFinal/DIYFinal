@@ -14,7 +14,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE META -->
-<title>companyRead</title>
+<title>companyUpdate</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="">
@@ -245,4 +245,5 @@
 		});
 	</script>
 </body>
+
 </html>

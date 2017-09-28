@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <script src="/admin/resources/js/jquery-3.2.1.js"></script>
-<title>Home</title>
+<title>Navi</title>
 <script>
 	$(function() {
 		$("#userLogin").click(
@@ -12,7 +12,6 @@
 					var id = $('input[name=userId]').val();
 					var pwd = $('input[name=userPwd]').val();
 
-					
 					if (id.length < 1) {
 						alert("아이디를 입력하세요!");
 						return false;
@@ -20,10 +19,9 @@
 						alert("비밀번호를 입력하세요!!");
 						return false;
 					} else {
-						location.href = "/admin/user/loginUser?id=" + id
-								+ "&pwd=" + pwd;
+						location.href = "/admin/user/loginUser?id=" + id + "&pwd=" + pwd;
 					}
-				});
+		});
 
 		$("#coLogin").click(
 				function() {
@@ -37,10 +35,9 @@
 						alert("비밀번호를 입력하세요!");
 						return false;
 					} else {
-						location.href = "/admin/user/loginCompany?coId=" + coId
-								+ "&coPwd=" + coPwd;
+						location.href = "/admin/user/loginCompany?coId=" + coId + "&coPwd=" + coPwd;
 					}
-				});
+		});
 	});
 </script>
 <div class="container-fluid">
@@ -53,30 +50,30 @@
 	<div id="navbar" class="navbar-collapse collapse">
 		<ul class="nav navbar-nav">
 			<li><a href="/admin/" style="font-size: 18px;">Home</a></li>
-			<li><a href="/admin/user/workSpace" style="font-size: 18px;">뭐라할까</a></li>
+			<li><a href="/admin/user/workSpace" style="font-size: 18px;">WorkSpace</a></li>
 			<li><a href="/admin/board/gallery" style="font-size: 18px;">Gallery</a></li>
-			<c:if test="${sessionScope.CoId !=null}">
+			<c:if test="${sessionScope.CoId != null}">
 				<li class="dropdown hasmenu"><a
 					href="/admin/user/connectedCompany" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false" style="font-size: 18px;">Company <span
+					aria-expanded="false" style="font-size: 18px;">Company<span
 						class="fa fa-angle-down"></span></a>
 					<ul class="dropdown-menu"
 						style="margin-top: 10px; box-shadow: 0 1px 15px black;">
 						<li><a href="/admin/file/furnitureUpload">가구 업로드</a></li>
 						<li><a href="/admin/file/library?coNAME=${coName}">가구 리스트</a></li>
-						<li><a href="/admin/stats/companyStatistics?coId=${CoId }">통계</a></li>
+						<li><a href="/admin/stats/companyStatistics?coId=${CoId}">자사 통계</a></li>
 						<li><a href="/admin/stats/graph1">연도별 회사 통계</a></li>
-						<li><a href="/admin/stats/graph4">월별 회사 통계2012</a></li>
-						<li><a href="/admin/stats/graph5">월별 회사 통계2013</a></li>
-						<li><a href="/admin/stats/graph6">월별 회사 통계2014</a></li>
-						<li><a href="/admin/stats/graph7">월별 회사 통계2015</a></li>
-						<li><a href="/admin/stats/graph8">월별 회사 통계2016</a></li>
-						<li><a href="/admin/stats/graph2">가구통계</a></li>
-						<li><a href="/admin/stats/graph3">가구통계2</a></li>
+						<li><a href="/admin/stats/graph2">회사별 가구 통계</a></li>
+						<li><a href="/admin/stats/graph3">회사별 가구 통계2</a></li>
+						<li><a href="/admin/stats/graph4">2012년 월별 회사 통계</a></li>
+						<li><a href="/admin/stats/graph5">2013년 월별 회사 통계</a></li>
+						<li><a href="/admin/stats/graph6">2014년 월별 회사 통계</a></li>
+						<li><a href="/admin/stats/graph7">2015년 월별 회사 통계</a></li>
+						<li><a href="/admin/stats/graph8">2016년 월별 회사 통계</a></li>
 					</ul></li>
 			</c:if>
-			<c:if test="${sessionScope.id=='admin'}">
+			<c:if test="${sessionScope.id == 'admin'}">
 				<li class="dropdown hasmenu"><a
 					href="/admin/user/connectedUser" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -86,9 +83,8 @@
 						style="margin-top: 10px; box-shadow: 0 1px 15px black;">
 						<li><a href="/admin/user/userList">일반 회원 관리</a></li>
 						<li><a href="/admin/user/companyList">기업 회원 관리</a></li>
-						<li><a href="/admin/file/library?coNAME=${coName}">라이브러리
-								관리</a></li>
-						<li><a href="/admin/stats/statistics">통계</a></li>
+						<li><a href="/admin/file/library?coNAME=${coName}">라이브러리 관리</a></li>
+						<li><a href="/admin/stats/statistics">전체 통계</a></li>
 					</ul></li>
 			</c:if>
 			<li><a href="#" style="font-size: 18px;">Contact</a></li>
@@ -173,8 +169,7 @@
 						</div>
 					</c:if>
 					<!-- 세션아이디 있을 때(로그인중) -->
-					<c:if test="${sessionScope.id != null || sessionScope.CoId!=null }">
-
+					<c:if test="${sessionScope.id != null || sessionScope.CoId != null}">
 						<li class="shopcart" style="">
 							<h4 class="row" style="text-align: center; font-size: 20px;">
 								Welcome<br>
@@ -185,28 +180,22 @@
 									</div>
 								</c:if>
 
-								<c:if
-									test="${sessionScope.id!=null && sessionScope.id!= 'admin'}">
-		                  ${sessionScope.id}
-		                  <div class="clearfix"></div>
+								<c:if test="${sessionScope.id != null && sessionScope.id != 'admin'}">
+		                  			${sessionScope.id}!
+		                  		<div class="clearfix"></div>
 									<div class="text-center">
-										<button type="submit" class="btn btn-primary"
-											style="width: 142px;">My Page</button>
 										<a href="/admin/user/logout" class="btn btn-primary">LOGOUT</a>
 									</div>
 								</c:if>
 
-								<c:if test="${sessionScope.CoId!=null}">
-		                  ${sessionScope.CoId}
-		                  <div class="clearfix"></div>
+								<c:if test="${sessionScope.CoId != null}">
+		                  			${sessionScope.CoId}!
+		                  		<div class="clearfix"></div>
 									<div class="text-center">
-										<button type="submit" class="btn btn-primary"
-											style="width: 142px;">My Page</button>
 										<a href="/admin/user/logout" class="btn btn-primary">LOGOUT</a>
 									</div>
 								</c:if>
 							</h4>
-
 						</li>
 					</c:if>
 				</ul></li>

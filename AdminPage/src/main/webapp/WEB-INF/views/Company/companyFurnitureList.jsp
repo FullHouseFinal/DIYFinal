@@ -18,7 +18,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE META -->
-<title>companyList</title>
+<title>libraryList</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="">
@@ -119,7 +119,6 @@
 								</table>
 							</div>
 									
-
 							<div class="col-md-12">
 								<nav class="text-center">
 									<ul class="pagination" id="navigator">
@@ -434,7 +433,7 @@
 							<li><a href="/admin/">Home</a></li>
 							<li><a href="#">Terms of Usage</a></li>
 							<li><a href="#">Contact</a></li>
-							<li><a class="topbutton" href="/admin/user/connectedCompany"
+							<li><a class="topbutton" href="#"
 								style="bottom: -100px;">Back<i class="fa fa-angle-up"></i></a></li>
 						</ul>
 					</div>
@@ -456,15 +455,11 @@
 	<script src="/admin/resources/js/index.js"></script>
 
 	<script>
-	function pageProc(currentPage, libraryCondition, libraryKeyword){
-		
-		var session = '${sessionScope.coName}'
-		
-		location.href = "/admin/file/library?coNAME="+session +"&currentPage="+currentPage + "&libraryCondition="+libraryCondition + "&libraryKeyword="+libraryKeyword;
-		
-		
+		function pageProc(currentPage, libraryCondition, libraryKeyword){
+			var session = '${sessionScope.coName}'
+			
+			location.href = "/admin/file/library?coNAME="+session +"&currentPage="+currentPage + "&libraryCondition="+libraryCondition + "&libraryKeyword="+libraryKeyword;
 		}
-	
 	</script>
 </body>
 

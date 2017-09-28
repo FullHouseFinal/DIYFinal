@@ -1,14 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+   pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>chart created with amCharts | amCharts</title>
+		<title>Graph7</title>
 		<meta name="description" content="chart created using amCharts live editor" />
 		
 		<!-- amCharts javascript sources -->
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
 		
-
 		<!-- amCharts javascript code -->
 		<script type="text/javascript">
 			AmCharts.makeChart("chartdiv",
@@ -78,75 +80,75 @@
 						
 						{
 							"category": "1",
-							"column-1": ' ${ja4.get(0)}',
-							"column-2":  ' ${ja4.get(1)}',
-							"column-3": ' ${ja4.get(2)}'
+							"column-1": ' ${ja3.get(0)}',
+							"column-2":  ' ${ja3.get(1)}',
+							"column-3": ' ${ja3.get(2)}'
 						},
 						{
 							"category": "2",
-							"column-1": ' ${fe4.get(0)}',
-							"column-2":  ' ${fe4.get(1)}',
-							"column-3": ' ${fe4.get(2)}'
+							"column-1": ' ${fe3.get(0)}',
+							"column-2":  ' ${fe3.get(1)}',
+							"column-3": ' ${fe3.get(2)}'
 						},
 						{
 							"category": "3",
-							"column-1": ' ${ma4.get(0)}',
-							"column-2":  ' ${ma4.get(1)}',
-							"column-3": ' ${ma4.get(2)}'
+							"column-1": ' ${ma3.get(0)}',
+							"column-2":  ' ${ma3.get(1)}',
+							"column-3": ' ${ma3.get(2)}'
 						},
 						{
 							"category": "4",
-							"column-1": ' ${ap4.get(0)}',
-							"column-2":  ' ${ap4.get(1)}',
-							"column-3": ' ${ap4.get(2)}'
+							"column-1": ' ${ap3.get(0)}',
+							"column-2":  ' ${ap3.get(1)}',
+							"column-3": ' ${ap3.get(2)}'
 						},
 						{
 							"category": "5",
-							"column-1": ' ${may4.get(0)}',
-							"column-2":  ' ${may4.get(1)}',
-							"column-3": ' ${may4.get(2)}'
+							"column-1": ' ${may3.get(0)}',
+							"column-2":  ' ${may3.get(1)}',
+							"column-3": ' ${may3.get(2)}'
 						},
 						{
 							"category": "6",
-							"column-1": ' ${jun4.get(0)}',
-							"column-2":  ' ${jun4.get(1)}',
-							"column-3": ' ${jun4.get(2)}'
+							"column-1": ' ${jun3.get(0)}',
+							"column-2":  ' ${jun3.get(1)}',
+							"column-3": ' ${jun3.get(2)}'
 						},
 						{
 							"category": "7",
-							"column-1": ' ${july4.get(0)}',
-							"column-2":  ' ${july4.get(1)}',
-							"column-3": ' ${july4.get(2)}'
+							"column-1": ' ${july3.get(0)}',
+							"column-2":  ' ${july3.get(1)}',
+							"column-3": ' ${july3.get(2)}'
 						},
 						{
 							"category": "8",
-							"column-1": ' ${au4.get(0)}',
-							"column-2":  ' ${au4.get(1)}',
-							"column-3": ' ${au4.get(2)}'
+							"column-1": ' ${au3.get(0)}',
+							"column-2":  ' ${au3.get(1)}',
+							"column-3": ' ${au3.get(2)}'
 						},
 						{
 							"category": "9",
-							"column-1": ' ${se4.get(0)}',
-							"column-2":  ' ${se4.get(1)}',
-							"column-3": ' ${se4.get(2)}'
+							"column-1": ' ${se3.get(0)}',
+							"column-2":  ' ${se3.get(1)}',
+							"column-3": ' ${se3.get(2)}'
 						},
 						{
 							"category": "10",
-							"column-1": ' ${op4.get(0)}',
-							"column-2":  ' ${op4.get(1)}',
-							"column-3": ' ${op4.get(2)}'
+							"column-1": ' ${op3.get(0)}',
+							"column-2":  ' ${op3.get(1)}',
+							"column-3": ' ${op3.get(2)}'
 						},
 						{
 							"category": "11",
-							"column-1": ' ${no4.get(0)}',
-							"column-2":  ' ${no4.get(1)}',
-							"column-3": ' ${no4.get(2)}'
+							"column-1": ' ${no3.get(0)}',
+							"column-2":  ' ${no3.get(1)}',
+							"column-3": ' ${no3.get(2)}'
 						},
 						{
 							"category": "12",
-							"column-1": ' ${de4.get(0)}',
-							"column-2":  ' ${de4.get(1)}',
-							"column-3": ' ${de4.get(2)}'
+							"column-1": ' ${de3.get(0)}',
+							"column-2":  ' ${de3.get(1)}',
+							"column-3": ' ${de3.get(2)}'
 						}
 					]
 				}
