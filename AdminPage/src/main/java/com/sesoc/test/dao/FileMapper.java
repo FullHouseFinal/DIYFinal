@@ -11,26 +11,22 @@ import com.sesoc.test.vo.ImgVO;
 
 public interface FileMapper {
 
-	public ArrayList<CompanyVO> find();
+	public ArrayList<CompanyVO> find();//??
 
-	public int fileSaved(FurnitureVO vo);
+	public int fileSaved(FurnitureVO vo);//파일 저장
 
-	public ArrayList<FurnitureVO> furnitureList(String coNAME);
+	public ArrayList<FurnitureVO> furnitureList(String coNAME);//페이징
 
 	public int libraryPaging(Map<String, String> libraryMap);
 
-	public ArrayList<FurnitureVO> libraryList(Map<String, String> libraryMap, RowBounds libraryRb);
+	public ArrayList<FurnitureVO> libraryList(Map<String, String> libraryMap, RowBounds libraryRb);//가구 라이브러리 목록
 
-	public int companylibraryPaging(Map<String, String> libraryMap);
+	public FurnitureVO libraryRead(int furnitureNum);//가구 라이브러리 열람
 
-	public ArrayList<FurnitureVO> companylibraryList(Map<String, String> libraryMap, RowBounds libraryRb);
+	public int furniturnDelete(int furnitureNum);//가구 라이브러리 삭제
 
-	public FurnitureVO libraryRead(int furnitureNum);
+	public ArrayList<FurnitureVO> getFurnitureList();//가구 작업창 표시용
 
-	public int furniturnDelete(int furnitureNum);
-
-	public ArrayList<FurnitureVO> getFurnitureList();
-
-	public void uploadImg(ImgVO imgVO);
+	public void uploadImg(ImgVO imgVO);//img 파일 업로드 테스트용
 	
 }

@@ -13,20 +13,20 @@ import com.sesoc.test.vo.ImgVO;
 
 public interface FileService {
 
-	public void find(Model model);
+	public void find(Model model);//??
 
-	public void fileSaved(FurnitureVO vo,List<MultipartFile> files, String path,String path1);
+	public void fileSaved(FurnitureVO vo,List<MultipartFile> files, String path,String path1);//파일 저장
 
-	public PageNavigator libraryNavi(int currentPage, Map<String, String> libraryMap);
+	public PageNavigator libraryNavi(int currentPage, Map<String, String> libraryMap);//페이징
 
-	public ArrayList<FurnitureVO> getLibraryList(Map<String, String> libraryMap, PageNavigator libraryNavi);
+	public ArrayList<FurnitureVO> getLibraryList(Map<String, String> libraryMap, PageNavigator libraryNavi);//가구 라이브러리 목록
 
-	public FurnitureVO libraryRead(int furnitureNum);
+	public FurnitureVO libraryRead(int furnitureNum);//가구 라이브러리 열람
 
-	public FurnitureVO furniturnDelete(int furnitureNum, String path,String path1);
+	public FurnitureVO furniturnDelete(int furnitureNum, String path,String path1);//가구 라이브러리 삭제
 
-	public ArrayList<FurnitureVO> getFurnitureList();
+	public ArrayList<FurnitureVO> getFurnitureList();//가구 작업창 표시용
 
-	public void uploadImg(ImgVO imgVO);
+	public void uploadImg(ImgVO imgVO);//img 파일 업로드 테스트용
 
 }

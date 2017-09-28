@@ -3,9 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sesoc.test.dao.FileMapper">
+	<!-- ?? -->
 	<select id="find"  resultType="CompanyVO">
 		SELECT * FROM ITR_COMPANY	
 	</select>
+	
 	<!-- 파일 저장 -->
 	<insert parameterType="FurnitureVO" id="fileSaved">
 			INSERT INTO ITR_FURNITURE VALUES ( FURNITURENUM_SEQ.NEXTVAL, 
@@ -31,7 +33,7 @@
 			) 
 	</insert>
 	
-	<!-- 가구 라이브러리?? -->
+	<!-- 가구 라이브러리 목록 -->
 	<select id="libraryList" parameterType="map" resultType="FurnitureVO">
 		SELECT * FROM ITR_FURNITURE 
 		
@@ -44,11 +46,9 @@
 				<if test="libraryCondition == 'type'">
 					and	TYPE LIKE '%'||#{libraryKeyword}||'%'
 				</if>
-				
 			</if>
 			
 			<if test="CompanyName == ''">
-			
 				<if test="libraryCondition == 'coname'">
 				where CONAME LIKE '%'||#{libraryKeyword}||'%' 
 				</if>
@@ -56,7 +56,6 @@
 				<if test="libraryCondition == 'type'">
 				where TYPE LIKE '%'||#{libraryKeyword}||'%'
 				</if>
-				
 			</if>
 		
 			  ORDER BY FURNITURENUM ASC
@@ -67,7 +66,6 @@
 		SELECT COUNT(*) FROM ITR_FURNITURE 
 			<if test="CompanyName != ''">
 			WHERE CONAME =#{CompanyName}
-			
 				<if test="libraryCondition == 'furnitureName'">
 					and	furnitureName LIKE '%'||#{libraryKeyword}||'%' 
 				</if>
@@ -78,7 +76,6 @@
 			</if>
 			
 			<if test="CompanyName == ''">
-			
 				<if test="libraryCondition == 'coname'">
 				where CONAME LIKE '%'||#{libraryKeyword}||'%' 
 				</if>
@@ -86,7 +83,6 @@
 				<if test="libraryCondition == 'type'">
 				where TYPE LIKE '%'||#{libraryKeyword}||'%'
 				</if>
-				
 			</if>
 			  ORDER BY FURNITURENUM ASC
 	</select>

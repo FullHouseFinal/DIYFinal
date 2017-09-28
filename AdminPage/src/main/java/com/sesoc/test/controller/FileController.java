@@ -78,7 +78,7 @@ public class FileController {
 		return "redirect:/";
 	}
 	
-	//가구 라이브러리 목록(검색, 페이징 포함)
+	//가구 라이브러리 목록(검색, 페이징)
 	@RequestMapping(value="library")
 	public String library(
 			@RequestParam(value="currentPage", defaultValue="1") int currentPage,

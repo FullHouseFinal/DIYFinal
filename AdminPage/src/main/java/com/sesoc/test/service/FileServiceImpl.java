@@ -24,6 +24,7 @@ public class FileServiceImpl implements FileService{
 	private final int countPerPage = 10;
 	private final int pagePerGroup = 5;
 	
+	//??
 	@Override
 	public void find(Model model) {
 		ArrayList<CompanyVO> list = new ArrayList<>();
@@ -31,6 +32,7 @@ public class FileServiceImpl implements FileService{
 		model.addAttribute("company", list);
 	}
 
+	//파일 저장
 	@Override
 	public void fileSaved(FurnitureVO vo, List<MultipartFile> files, String path,String path1) {
 		dao.fileSaved(vo);
@@ -42,9 +44,9 @@ public class FileServiceImpl implements FileService{
 		if (!paths.isDirectory()) paths.mkdir();
 		if (!paths1.isDirectory()) paths1.mkdir();
 		
-		String originalFileName1 =files.get(0).getOriginalFilename();
-		String originalFileName2 =files.get(1).getOriginalFilename();
-		String originalFileName3 =files.get(2).getOriginalFilename();
+		String originalFileName1 = files.get(0).getOriginalFilename();
+		String originalFileName2 = files.get(1).getOriginalFilename();
+		String originalFileName3 = files.get(2).getOriginalFilename();
 		
 		String savedFileName1 = originalFileName1; // HDD에 저장되는 파일명 : filename + "_" + UUID +
 		String savedFileName2 = originalFileName2; 
@@ -103,6 +105,7 @@ public class FileServiceImpl implements FileService{
 		}
 	}
 
+	//페이징
 	@Override
 	public PageNavigator libraryNavi(int currentPage, Map<String, String> libraryMap) {
 		int totalRecordsCount = dao.libraryPaging(libraryMap);
@@ -110,27 +113,30 @@ public class FileServiceImpl implements FileService{
 		return libraryNavi;
 	}
 
+	//가구 라이브러리 목록
 	@Override
 	public ArrayList<FurnitureVO> getLibraryList(Map<String, String> libraryMap, PageNavigator libraryNavi) {
 		return dao.libraryList(libraryMap, libraryNavi.getStartRecord(), libraryNavi.getCountPerPage());
 	}
 
+	//가구 라이브러리 열람
 	@Override
 	public FurnitureVO libraryRead(int furnitureNum) {
 		return dao.libraryRead(furnitureNum);
 	}
 
+	//가구 라이브러리 삭제
 	@Override
 	public FurnitureVO furniturnDelete(int furnitureNum, String path, String path1) {
-		FurnitureVO vo=dao.furniturDelete(furnitureNum);
+		FurnitureVO vo = dao.furniturDelete(furnitureNum);
 		
-		String fullpath1=path+vo.getObjPath();
-		String fullpath2=path+vo.getMtlPath();
-		String fullpath3=path+vo.getImgPath();
-		String fullpath4=path1+vo.getObjTexture1();
-		String fullpath5=path1+vo.getObjTexture2();
-		String fullpath6=path1+vo.getObjTexture3();
-		String fullpath7=path1+vo.getObjTexture4();
+		String fullpath1 = path+vo.getObjPath();
+		String fullpath2 = path+vo.getMtlPath();
+		String fullpath3 = path+vo.getImgPath();
+		String fullpath4 = path1+vo.getObjTexture1();
+		String fullpath5 = path1+vo.getObjTexture2();
+		String fullpath6 = path1+vo.getObjTexture3();
+		String fullpath7 = path1+vo.getObjTexture4();
 	
 		File delFile1 = new File(fullpath1);
 		if(delFile1.isFile()){
@@ -170,11 +176,13 @@ public class FileServiceImpl implements FileService{
 		return vo;
 	}
 
+	//가구 작업창 표시용
 	@Override
 	public ArrayList<FurnitureVO> getFurnitureList() {
 		return dao.getFurnitureList();
 	}
 
+	//img 파일 업로드 테스트용
 	@Override
 	public void uploadImg(ImgVO imgVO) {
 		dao.uploadImg(imgVO);
